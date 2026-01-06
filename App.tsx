@@ -46,13 +46,13 @@ const Header: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 font-medium">
           <a href="#presentation" className="hover:text-[#708238] transition-colors">Présentation</a>
-          <a href="#comment-ca-marche" className="hover:text-[#708238] transition-colors">Fonctionnement</a>
+          <a href="#comment-ca-marche" className="hover:text-[#708238] transition-colors">Étapes</a>
           <a href="#formulaire" className="hover:text-[#708238] transition-colors">Formulaire</a>
           <a 
             href="#payment" 
             className="bg-[#708238] text-white px-6 py-2.5 rounded-full hover:bg-[#5a6b2d] transition-all shadow-md active:scale-95"
           >
-            Faire une offrande
+            Faire l'offrande
           </a>
         </nav>
 
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-[#FDFBF7] border-b border-[#EADAC5] absolute w-full left-0 py-6 px-4 flex flex-col gap-4 shadow-xl">
           <a href="#presentation" onClick={() => setIsOpen(false)} className="text-lg font-medium py-2">Présentation</a>
-          <a href="#comment-ca-marche" onClick={() => setIsOpen(false)} className="text-lg font-medium py-2">Fonctionnement</a>
+          <a href="#comment-ca-marche" onClick={() => setIsOpen(false)} className="text-lg font-medium py-2">Étapes</a>
           <a href="#formulaire" onClick={() => setIsOpen(false)} className="text-lg font-medium py-2">Demande de messe</a>
           <a 
             href="#payment" 
@@ -85,26 +85,26 @@ const Hero: React.FC = () => (
   <section className="pt-32 pb-20 px-4">
     <div className="max-w-4xl mx-auto text-center">
       <span className="inline-block px-4 py-1.5 rounded-full bg-[#EADAC5] text-[#4A3728] text-sm font-semibold mb-6">
-        Service Paroissial en Ligne
+        Portail Paroissial Officiel
       </span>
       <h2 className="text-4xl md:text-6xl font-serif text-[#4A3728] mb-6 leading-tight">
-        Offrez le Saint Sacrifice de la Messe
+        Offrez une Intention de Messe
       </h2>
       <p className="text-lg md:text-xl text-[#6B5A4B] mb-10 max-w-2xl mx-auto leading-relaxed">
-        Confiez vos intentions de prière, vos actions de grâce ou le repos de vos défunts à la prière de la communauté de Divo.
+        Confiez vos intentions de prière ou le repos de vos défunts à la prière de notre communauté paroissiale de Divo.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a 
           href="#formulaire" 
           className="w-full sm:w-auto px-8 py-4 bg-[#708238] text-white rounded-full font-bold text-lg shadow-xl hover:bg-[#5a6b2d] transition-all flex items-center justify-center gap-2"
         >
-          Faire une demande <ArrowRight size={20} />
+          Remplir le formulaire <ArrowRight size={20} />
         </a>
         <a 
           href="#presentation" 
           className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-[#EADAC5] text-[#4A3728] rounded-full font-bold text-lg hover:bg-gray-50 transition-all"
         >
-          En savoir plus
+          Pourquoi une messe ?
         </a>
       </div>
     </div>
@@ -116,8 +116,7 @@ const Presentation: React.FC = () => (
     <div className="max-w-4xl mx-auto text-center">
       <h2 className="text-3xl md:text-4xl font-serif mb-8">Pourquoi demander une messe ?</h2>
       <p className="text-[#6B5A4B] mb-12 text-lg leading-relaxed max-w-2xl mx-auto">
-        Toute messe a une valeur infinie. C'est le plus beau cadeau que l'on puisse offrir. 
-        Demander une intention de messe, c'est confier à Dieu les événements de notre vie.
+        Toute messe a une valeur infinie. C'est le plus beau cadeau que l'on puisse offrir pour confier à Dieu les intentions qui nous sont chères.
       </p>
       <div className="grid md:grid-cols-3 gap-8">
         <div className="bg-white p-8 rounded-3xl border border-[#EADAC5] shadow-sm">
@@ -125,21 +124,21 @@ const Presentation: React.FC = () => (
             <Heart size={28} />
           </div>
           <h4 className="font-bold text-[#4A3728] mb-2">Action de grâce</h4>
-          <p className="text-sm text-[#6B5A4B]">Remercier le Seigneur pour un bienfait (santé, mariage, examen, anniversaire).</p>
+          <p className="text-sm text-[#6B5A4B]">Remercier pour un bienfait (santé, mariage, examen, anniversaire).</p>
         </div>
         <div className="bg-white p-8 rounded-3xl border border-[#EADAC5] shadow-sm">
           <div className="inline-block mb-4 bg-[#B8860B]/10 p-3 rounded-xl text-[#B8860B]">
             <CheckCircle size={28} />
           </div>
           <h4 className="font-bold text-[#4A3728] mb-2">Pour les défunts</h4>
-          <p className="text-sm text-[#6B5A4B]">Prier pour le repos de l'âme d'un être cher et l'accompagner vers Dieu.</p>
+          <p className="text-sm text-[#6B5A4B]">Prier pour le repos de l'âme d'un être cher.</p>
         </div>
         <div className="bg-white p-8 rounded-3xl border border-[#EADAC5] shadow-sm">
           <div className="inline-block mb-4 bg-[#B8860B]/10 p-3 rounded-xl text-[#B8860B]">
             <Calendar size={28} />
           </div>
-          <h4 className="font-bold text-[#4A3728] mb-2">Intentions particulières</h4>
-          <p className="text-sm text-[#6B5A4B]">Demander une grâce pour soi ou un proche (malade, difficultés, paix).</p>
+          <h4 className="font-bold text-[#4A3728] mb-2">Intentions diverses</h4>
+          <p className="text-sm text-[#6B5A4B]">Demander une grâce particulière pour soi ou pour ses proches.</p>
         </div>
       </div>
     </div>
@@ -163,21 +162,21 @@ const HowItWorks: React.FC = () => (
   <section id="comment-ca-marche" className="py-20 px-4">
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-serif mb-4">Comment ça marche ?</h2>
-        <p className="text-[#6B5A4B]">Une démarche simple et spirituelle en deux étapes clés.</p>
+        <h2 className="text-3xl md:text-5xl font-serif mb-4">Fonctionnement</h2>
+        <p className="text-[#6B5A4B]">Suivez ces deux étapes pour valider votre demande.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <Step 
           number={1}
           icon={<FileText size={48} />}
           title="Remplir le formulaire"
-          description="Indiquez vos intentions de prière et les dates souhaitées via notre formulaire sécurisé ci-dessous."
+          description="Renseignez vos intentions de prière et les dates souhaitées via le formulaire ci-dessous."
         />
         <Step 
           number={2}
           icon={<Wallet size={48} />}
           title="Effectuer l'offrande"
-          description="Réglez votre offrande via Wave pour soutenir la vie de votre paroisse et valider votre demande."
+          description="Réglez votre offrande via Wave pour soutenir la paroisse et finaliser votre demande."
         />
       </div>
     </div>
@@ -188,14 +187,14 @@ const FormSection: React.FC = () => (
   <section id="formulaire" className="py-24 px-4 bg-[#FDFBF7]">
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-serif mb-4">1. Formulaire de demande</h2>
-        <p className="text-[#6B5A4B]">Commencez par renseigner les détails de votre intention.</p>
+        <h2 className="text-3xl md:text-4xl font-serif mb-4">1. Remplir le formulaire</h2>
+        <p className="text-[#6B5A4B]">Veuillez fournir les détails de votre demande de messe.</p>
       </div>
       
       <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-[#EADAC5]">
         <div className="p-3 md:p-4 bg-gray-50 flex items-center justify-between border-b border-[#EADAC5]">
            <span className="flex items-center gap-2 text-xs md:text-sm text-gray-500 font-medium px-2">
-             <ExternalLink size={14} /> Questionnaire Officiel
+             <ExternalLink size={14} /> Formulaire Intégré
            </span>
            <a 
             href="https://docs.google.com/forms/d/e/1FAIpQLSdDaheghnXz89Ff5Y6cZm0E7D53rPCkmVGDEbYeLSmS1fMJcg/viewform" 
@@ -224,11 +223,11 @@ const PaymentBanner: React.FC = () => (
   <section id="payment" className="py-20 px-4 bg-[#708238] text-white rounded-t-[3rem] md:rounded-t-[5rem]">
     <div className="max-w-4xl mx-auto text-center">
       <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6 text-sm font-medium">
-        <CreditCard size={18} /> 2. Étape de l'offrande
+        <CreditCard size={18} /> 2. Effectuer l'offrande
       </div>
-      <h2 className="text-3xl md:text-5xl font-serif mb-6">Offrande via Wave</h2>
+      <h2 className="text-3xl md:text-5xl font-serif mb-6">Paiement par Wave</h2>
       <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-        L'offrande de messe est un geste de partage pour soutenir la vie de votre paroisse et la mission des prêtres.
+        L'offrande de messe est un geste de partage libre qui permet de soutenir la mission des prêtres et la vie matérielle de la paroisse.
       </p>
       <a 
         href="https://pay.wave.com/m/M_ci_15fCRNAgit8_/c/ci/" 
@@ -239,9 +238,14 @@ const PaymentBanner: React.FC = () => (
         <img src="https://www.wave.com/static/icons/wave-logo.svg" alt="Wave" className="h-8 w-auto invert" />
         Payer avec Wave
       </a>
-      <p className="mt-8 text-sm text-white/60 max-w-lg mx-auto">
-        Note : Une fois le formulaire rempli, effectuez votre paiement pour finaliser la demande. Vous pouvez aussi contacter le secrétariat pour toute assistance.
-      </p>
+      <div className="mt-12 p-6 rounded-2xl bg-black/10 border border-white/20 max-w-2xl mx-auto">
+        <h4 className="font-bold flex items-center justify-center gap-2 mb-2">
+          <CheckCircle size={18} /> Rappel important
+        </h4>
+        <p className="text-sm text-white/70">
+          Votre demande sera validée par le secrétariat une fois le formulaire rempli et l'offrande effectuée.
+        </p>
+      </div>
     </div>
   </section>
 );
@@ -257,7 +261,7 @@ const Footer: React.FC = () => (
       
       <div className="flex items-center justify-center gap-6 mb-8">
         <a href="tel:+22500000000" className="flex items-center gap-2 hover:text-white transition-colors">
-          <Phone size={16} /> Contact Secrétariat
+          <Phone size={16} /> Contacter le Secrétariat
         </a>
       </div>
 
