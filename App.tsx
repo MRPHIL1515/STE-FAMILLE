@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Cross, 
   FileText, 
@@ -27,11 +28,21 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-20 selection:bg-amber-100">
       {/* En-tête professionnel */}
       <header className="bg-slate-900 text-white pt-16 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-5 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.05, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute top-0 right-0 pointer-events-none transform translate-x-1/4 -translate-y-1/4"
+        >
           <Church size={280} strokeWidth={0.5} />
-        </div>
+        </motion.div>
         
-        <div className="relative z-10 max-w-md mx-auto flex flex-col items-center text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative z-10 max-w-md mx-auto flex flex-col items-center text-center"
+        >
           <div className="w-16 h-16 bg-slate-800/80 rounded-2xl border border-slate-700 flex items-center justify-center mb-6 shadow-lg backdrop-blur-sm">
             <Cross size={32} className="text-[#c5a059]" />
           </div>
@@ -40,14 +51,19 @@ const App: React.FC = () => {
           <p className="text-slate-400 text-sm font-light max-w-[250px] leading-relaxed">
             Espace dédié aux intentions de messe et prières
           </p>
-        </div>
+        </motion.div>
       </header>
 
       {/* Contenu Principal */}
       <main className="max-w-md mx-auto px-5 -mt-10 relative z-20 space-y-5">
         
         {/* Carte d'information */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-start gap-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-start gap-4"
+        >
           <div className="bg-amber-50 p-3 rounded-xl text-amber-600 shrink-0">
             <CalendarDays size={24} />
           </div>
@@ -57,10 +73,15 @@ const App: React.FC = () => {
               Confiez vos intentions à la paroisse en suivant ces deux étapes simples.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Étapes */}
-        <div className="space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-3"
+        >
           {/* Étape 1 */}
           <button 
             onClick={() => setShowForm(true)}
@@ -90,10 +111,15 @@ const App: React.FC = () => {
             </div>
             <Wallet size={20} className="text-[#1ca8e4]" />
           </a>
-        </div>
+        </motion.div>
 
         {/* Section d'aide Wave */}
-        <div className="bg-slate-100/50 rounded-2xl p-5 border border-slate-200/60 mt-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-slate-100/50 rounded-2xl p-5 border border-slate-200/60 mt-8"
+        >
           <div className="flex items-center gap-2 mb-3">
             <Info size={16} className="text-slate-500" />
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">Information Wave</span>
@@ -116,11 +142,16 @@ const App: React.FC = () => {
               <Copy size={18} />
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="text-center pt-8 pb-4">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-center pt-8 pb-4"
+        >
           <p className="font-serif text-slate-400 italic text-sm">Que Dieu vous bénisse</p>
-        </div>
+        </motion.div>
       </main>
 
       {/* Barre de Navigation */}
@@ -148,9 +179,16 @@ const App: React.FC = () => {
       </nav>
 
       {/* Modal Formulaire */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 bg-slate-50 flex flex-col animate-in slide-in-from-bottom duration-300">
-          <div className="px-5 py-4 flex items-center justify-between border-b border-slate-200 bg-white shadow-sm">
+      <AnimatePresence>
+        {showForm && (
+          <motion.div 
+            initial={{ y: '100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-50 bg-slate-50 flex flex-col"
+          >
+            <div className="px-5 py-4 flex items-center justify-between border-b border-slate-200 bg-white shadow-sm">
             <button 
               onClick={() => setShowForm(false)}
               className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
@@ -179,8 +217,9 @@ const App: React.FC = () => {
               Étape suivante : Offrande <ChevronRight size={18} />
             </button>
           </div>
-        </div>
-      )}
+        </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
