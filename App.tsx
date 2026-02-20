@@ -5,14 +5,13 @@ import {
   FileText, 
   Wallet, 
   Phone, 
-  Info, 
   X, 
   ChevronRight,
-  Heart,
   Church,
   CalendarDays,
   ExternalLink,
-  Copy
+  Copy,
+  Info
 } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -25,150 +24,140 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans select-none overflow-hidden">
-      
-      {/* Barre d'état / Header Style App APK */}
-      <header className="bg-[#1e3a8a] text-[#d4af37] px-6 pt-10 pb-8 rounded-b-[3rem] shadow-2xl relative overflow-hidden">
-        {/* Motif religieux discret */}
-        <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-          <Church size={140} strokeWidth={1} />
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-20 selection:bg-amber-100">
+      {/* En-tête professionnel */}
+      <header className="bg-slate-900 text-white pt-16 pb-20 px-6 relative overflow-hidden">
+        <div className="absolute top-0 right-0 opacity-5 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
+          <Church size={280} strokeWidth={0.5} />
         </div>
         
-        <div className="flex justify-between items-start relative z-10">
-          <div className="flex items-center gap-4">
-            <div className="bg-[#d4af37] p-2.5 rounded-2xl shadow-lg border border-[#b8860b]">
-              <Cross size={28} className="text-[#1e3a8a]" />
-            </div>
-            <div>
-              <h1 className="font-serif font-bold text-2xl leading-tight text-white tracking-tight">Sainte Famille</h1>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D4AF37] opacity-90">Paroisse de Divo</p>
-            </div>
+        <div className="relative z-10 max-w-md mx-auto flex flex-col items-center text-center">
+          <div className="w-16 h-16 bg-slate-800/80 rounded-2xl border border-slate-700 flex items-center justify-center mb-6 shadow-lg backdrop-blur-sm">
+            <Cross size={32} className="text-[#c5a059]" />
           </div>
-          <a href="tel:+22500000000" className="bg-white/10 p-3 rounded-2xl backdrop-blur-lg border border-white/20 active:scale-90 transition-transform">
-            <Phone size={22} className="text-white" />
-          </a>
-        </div>
-
-        <div className="mt-10 relative z-10">
-          <div className="inline-block px-3 py-1 bg-[#D4AF37]/20 rounded-full border border-[#D4AF37]/30 mb-2">
-            <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest">Service Officiel</p>
-          </div>
-          <h2 className="text-3xl font-serif font-bold text-white">Espace de Prière</h2>
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#c5a059] mb-3">Paroisse de Divo</p>
+          <h1 className="font-serif text-4xl font-medium text-white mb-3 tracking-tight">Sainte Famille</h1>
+          <p className="text-slate-400 text-sm font-light max-w-[250px] leading-relaxed">
+            Espace dédié aux intentions de messe et prières
+          </p>
         </div>
       </header>
 
-      {/* Contenu Principal - Dashboard APK Style */}
-      <main className="flex-1 px-6 py-8 overflow-y-auto space-y-8 pb-32">
+      {/* Contenu Principal */}
+      <main className="max-w-md mx-auto px-5 -mt-10 relative z-20 space-y-5">
         
-        {/* Widget Intentions */}
-        <div className="bg-white p-6 rounded-[2.5rem] shadow-md border border-slate-200 flex items-center gap-4 active:bg-slate-50 transition-colors">
-          <div className="bg-slate-50 p-4 rounded-2xl text-[#d4af37] border border-slate-200">
-            <CalendarDays size={28} />
+        {/* Carte d'information */}
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-start gap-4">
+          <div className="bg-amber-50 p-3 rounded-xl text-amber-600 shrink-0">
+            <CalendarDays size={24} />
           </div>
-          <div className="flex-1">
-            <h3 className="font-bold text-base">Intentions de Messe</h3>
-            <p className="text-xs text-slate-500 font-medium">Suivez les deux étapes ci-dessous</p>
+          <div>
+            <h2 className="font-serif text-xl font-medium text-slate-900">Demander une messe</h2>
+            <p className="text-sm text-slate-500 mt-1.5 leading-relaxed">
+              Confiez vos intentions à la paroisse en suivant ces deux étapes simples.
+            </p>
           </div>
-          <ChevronRight size={20} className="text-[#d4af37]" />
         </div>
 
-        {/* Grille de Boutons Iconiques */}
-        <div className="grid grid-cols-2 gap-5">
-          {/* Étape 1 : Formulaire */}
+        {/* Étapes */}
+        <div className="space-y-3">
+          {/* Étape 1 */}
           <button 
             onClick={() => setShowForm(true)}
-            className="flex flex-col items-center justify-center p-8 bg-white rounded-[3rem] border-2 border-slate-200 shadow-sm active:scale-95 transition-all group hover:border-[#1e3a8a]"
+            className="w-full bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 hover:border-slate-300 hover:shadow-md transition-all text-left group"
           >
-            <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-5 group-hover:bg-[#1e3a8a] transition-colors border border-slate-200">
-              <FileText size={36} className="text-[#1e3a8a] group-hover:text-[#d4af37]" />
+            <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 group-hover:text-slate-900 group-hover:bg-slate-100 transition-colors shrink-0">
+              <span className="font-serif font-medium text-lg">1</span>
             </div>
-            <span className="font-bold text-sm tracking-tight">1. Demande</span>
-            <span className="text-[9px] text-[#1e3a8a] font-black uppercase mt-1 opacity-60">Formulaire</span>
+            <div className="flex-1">
+              <h3 className="font-medium text-slate-900 text-base">Remplir le formulaire</h3>
+              <p className="text-xs text-slate-500 mt-0.5">Détaillez votre intention de prière</p>
+            </div>
+            <ChevronRight size={20} className="text-slate-300 group-hover:text-slate-600 transition-colors" />
           </button>
 
-          {/* Étape 2 : Paiement */}
+          {/* Étape 2 */}
           <a 
             href={waveLink}
-            className="flex flex-col items-center justify-center p-8 bg-white rounded-[3rem] border-2 border-slate-200 shadow-sm active:scale-95 transition-all group hover:border-[#1ca8e4]"
+            className="w-full bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 hover:border-[#1ca8e4]/30 hover:shadow-md transition-all text-left group"
           >
-            <div className="w-20 h-20 bg-[#EBF7FF] rounded-full flex items-center justify-center mb-5 group-hover:bg-[#1ca8e4] transition-colors border border-slate-200">
-              <Wallet size={36} className="text-[#1ca8e4] group-hover:text-white" />
+            <div className="w-10 h-10 rounded-full bg-[#1ca8e4]/10 border border-[#1ca8e4]/20 flex items-center justify-center text-[#1ca8e4] shrink-0">
+              <span className="font-serif font-medium text-lg">2</span>
             </div>
-            <span className="font-bold text-sm tracking-tight">2. Offrande</span>
-            <span className="text-[9px] text-[#1ca8e4] font-black uppercase mt-1 opacity-60">Via Wave</span>
+            <div className="flex-1">
+              <h3 className="font-medium text-slate-900 text-base">Faire l'offrande</h3>
+              <p className="text-xs text-slate-500 mt-0.5">Paiement sécurisé via Wave</p>
+            </div>
+            <Wallet size={20} className="text-[#1ca8e4]" />
           </a>
         </div>
 
-        {/* Section de secours / Lien direct spécifique */}
-        <div className="bg-white p-6 rounded-[2.5rem] border border-slate-200 shadow-inner space-y-4">
-          <div className="flex items-center gap-2 text-slate-700">
-            <ExternalLink size={18} />
-            <span className="text-xs font-bold uppercase tracking-widest">Lien de paiement direct</span>
+        {/* Section d'aide Wave */}
+        <div className="bg-slate-100/50 rounded-2xl p-5 border border-slate-200/60 mt-8">
+          <div className="flex items-center gap-2 mb-3">
+            <Info size={16} className="text-slate-500" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">Information Wave</span>
           </div>
-          
-          <div className="p-4 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
-            <p className="text-[11px] text-slate-600 leading-relaxed text-center italic">
-              "Veuillez Payer <strong>PHIL services</strong> avec Wave en cliquant sur le lien ci-dessous. Ajoutez cet expéditeur à vos contacts pour rendre le lien cliquable."
-            </p>
-            
-            <div className="mt-4 flex flex-col items-center gap-3">
-              <a 
-                href={waveLink} 
-                className="text-[#1ca8e4] font-bold text-[13px] break-all text-center underline px-4"
-              >
-                {waveLink}
-              </a>
-              <button 
-                onClick={copyToClipboard}
-                className="flex items-center gap-2 px-4 py-2 bg-[#1ca8e4]/10 text-[#1ca8e4] rounded-full text-[10px] font-bold active:scale-90 transition-transform"
-              >
-                <Copy size={14} /> Copier le lien
-              </button>
-            </div>
+          <p className="text-sm text-slate-600 leading-relaxed mb-5">
+            Veuillez payer <strong>PHIL services</strong>. Ajoutez cet expéditeur à vos contacts pour rendre le lien cliquable si nécessaire.
+          </p>
+          <div className="flex gap-3">
+            <a 
+              href={waveLink} 
+              className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-center text-sm font-medium text-[#1ca8e4] shadow-sm hover:bg-slate-50 transition-colors"
+            >
+              Ouvrir Wave
+            </a>
+            <button 
+              onClick={copyToClipboard}
+              className="px-4 bg-white border border-slate-200 rounded-xl text-slate-600 shadow-sm flex items-center justify-center hover:bg-slate-50 transition-colors"
+              aria-label="Copier le lien"
+            >
+              <Copy size={18} />
+            </button>
           </div>
         </div>
 
-        {/* Message de Foi */}
-        <div className="text-center pt-4">
-          <p className="font-serif text-slate-500 opacity-60 text-sm">Que Dieu vous bénisse</p>
+        <div className="text-center pt-8 pb-4">
+          <p className="font-serif text-slate-400 italic text-sm">Que Dieu vous bénisse</p>
         </div>
       </main>
 
-      {/* Barre de Navigation style APK */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-slate-200 py-4 px-10 flex justify-between items-center rounded-t-[2.5rem] shadow-[0_-10px_30px_rgba(0,0,0,0.08)] z-50">
-        <button className="flex flex-col items-center gap-1.5 text-[#1e3a8a] active:scale-90 transition-transform">
-          <div className="bg-[#1e3a8a]/10 p-2.5 rounded-2xl">
-            <Cross size={22} />
-          </div>
-          <span className="text-[9px] font-black uppercase tracking-tighter">Paroisse</span>
-        </button>
-        <button 
-          onClick={() => setShowForm(true)}
-          className="flex flex-col items-center gap-1.5 text-slate-400 active:scale-90 transition-transform"
-        >
-          <FileText size={22} />
-          <span className="text-[9px] font-black uppercase tracking-tighter">Demande</span>
-        </button>
-        <a 
-          href="tel:+22500000000"
-          className="flex flex-col items-center gap-1.5 text-slate-400 active:scale-90 transition-transform"
-        >
-          <Phone size={22} />
-          <span className="text-[9px] font-black uppercase tracking-tighter">Contact</span>
-        </a>
+      {/* Barre de Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 z-40">
+        <div className="max-w-md mx-auto flex justify-around items-center h-16 px-6">
+          <button className="flex flex-col items-center justify-center w-full h-full text-slate-900">
+            <Church size={20} className="mb-1" />
+            <span className="text-[10px] font-medium">Accueil</span>
+          </button>
+          <button 
+            onClick={() => setShowForm(true)}
+            className="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-900 transition-colors"
+          >
+            <FileText size={20} className="mb-1" />
+            <span className="text-[10px] font-medium">Demande</span>
+          </button>
+          <a 
+            href="tel:+22500000000"
+            className="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-900 transition-colors"
+          >
+            <Phone size={20} className="mb-1" />
+            <span className="text-[10px] font-medium">Contact</span>
+          </a>
+        </div>
       </nav>
 
-      {/* Modal Formulaire Full Screen APK */}
+      {/* Modal Formulaire */}
       {showForm && (
-        <div className="fixed inset-0 z-[100] bg-slate-50 flex flex-col animate-in slide-in-from-bottom duration-500">
-          <div className="px-6 py-5 flex items-center justify-between border-b border-slate-200 bg-white shadow-sm">
+        <div className="fixed inset-0 z-50 bg-slate-50 flex flex-col animate-in slide-in-from-bottom duration-300">
+          <div className="px-5 py-4 flex items-center justify-between border-b border-slate-200 bg-white shadow-sm">
             <button 
               onClick={() => setShowForm(false)}
-              className="p-2 text-[#1e3a8a] bg-slate-50 rounded-xl active:scale-90 transition-transform"
+              className="p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
             >
               <X size={24} />
             </button>
-            <h3 className="font-serif font-bold text-xl text-[#1e3a8a]">Intention de Messe</h3>
+            <h3 className="font-serif font-medium text-lg text-slate-900">Intention de Messe</h3>
             <div className="w-10"></div>
           </div>
           
@@ -182,25 +171,16 @@ const App: React.FC = () => {
             </iframe>
           </div>
 
-          <div className="p-6 bg-white border-t border-slate-200 flex flex-col gap-3">
+          <div className="p-5 bg-white border-t border-slate-200">
             <button 
               onClick={() => setShowForm(false)}
-              className="w-full bg-[#1e3a8a] text-[#d4af37] py-5 rounded-[2rem] font-bold text-base shadow-xl active:scale-95 transition-all border border-[#d4af37]/20"
+              className="w-full bg-slate-900 text-white py-4 rounded-xl font-medium text-base shadow-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
             >
-              Suivant : Faire l'offrande
+              Étape suivante : Offrande <ChevronRight size={18} />
             </button>
-            <p className="text-[10px] text-center text-slate-500">Appuyez ici après avoir validé le formulaire</p>
           </div>
         </div>
       )}
-
-      {/* Footer Minimaliste */}
-      <div className="pb-24 pt-4 text-center">
-        <p className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-black">
-          Sainte Famille Nazareth • Divo
-        </p>
-      </div>
-
     </div>
   );
 };
