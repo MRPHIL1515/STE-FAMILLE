@@ -100,7 +100,7 @@ const App: React.FC = () => {
           {/* Étape 2 */}
           <a 
             href={waveLink}
-            target="_blank"
+            target="_top"
             rel="noopener noreferrer"
             className="w-full bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 hover:border-[#1ca8e4]/30 hover:shadow-md transition-all text-left group"
           >
@@ -132,7 +132,7 @@ const App: React.FC = () => {
           <div className="flex gap-3">
             <a 
               href={waveLink} 
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
               className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-center text-sm font-medium text-[#1ca8e4] shadow-sm hover:bg-slate-50 transition-colors"
             >
@@ -214,12 +214,15 @@ const App: React.FC = () => {
           </div>
 
           <div className="p-5 bg-white border-t border-slate-200">
-            <button 
+            <a 
+              href={waveLink}
+              target="_top"
+              rel="noopener noreferrer"
               onClick={() => setShowForm(false)}
               className="w-full bg-slate-900 text-white py-4 rounded-xl font-medium text-base shadow-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
             >
               Étape suivante : Offrande <ChevronRight size={18} />
-            </button>
+            </a>
           </div>
         </motion.div>
         )}
