@@ -17,7 +17,7 @@ import {
 
 const App: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
-  const waveLink = "https://pay.wave.com/m/M_ci_15fCRNAgit8_/c/ci/";
+  const waveLink = "https://pay.wave.com/m/M_ci_Hv81mxpuJK74/c/ci/";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(waveLink);
@@ -169,7 +169,7 @@ const App: React.FC = () => {
             <span className="text-[10px] font-medium">Demande</span>
           </button>
           <a 
-            href="tel:+22500000000"
+            href="tel:+2250712041710"
             className="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-slate-900 transition-colors"
           >
             <Phone size={20} className="mb-1" />
