@@ -100,6 +100,8 @@ const App: React.FC = () => {
           {/* Étape 2 */}
           <a 
             href={waveLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex items-center gap-4 hover:border-[#1ca8e4]/30 hover:shadow-md transition-all text-left group"
           >
             <div className="w-10 h-10 rounded-full bg-[#1ca8e4]/10 border border-[#1ca8e4]/20 flex items-center justify-center text-[#1ca8e4] shrink-0">
@@ -125,11 +127,13 @@ const App: React.FC = () => {
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">Information Wave</span>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed mb-5">
-            Veuillez effectuer votre offrande via Wave. Ajoutez le lien à vos contacts pour le rendre cliquable si nécessaire.
+            Veuillez effectuer votre offrande via Wave. Le lien ouvrira l'application sur mobile ou affichera un QR code sur ordinateur.
           </p>
           <div className="flex gap-3">
             <a 
               href={waveLink} 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 bg-white border border-slate-200 rounded-xl py-2.5 text-center text-sm font-medium text-[#1ca8e4] shadow-sm hover:bg-slate-50 transition-colors"
             >
               Ouvrir Wave
