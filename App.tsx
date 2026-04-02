@@ -125,7 +125,7 @@ const App: React.FC = () => {
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-600">Information Wave</span>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed mb-5">
-            Veuillez payer <strong>PHIL services</strong>. Ajoutez cet expéditeur à vos contacts pour rendre le lien cliquable si nécessaire.
+            Veuillez effectuer votre offrande via Wave. Ajoutez le lien à vos contacts pour le rendre cliquable si nécessaire.
           </p>
           <div className="flex gap-3">
             <a 
