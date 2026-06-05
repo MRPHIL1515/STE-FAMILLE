@@ -666,14 +666,47 @@ const App: React.FC = () => {
                     >
                       <div className="space-y-6 flex-1 flex flex-col justify-center">
                         
-                        {/* Beautiful centered photograph of the altar boys representing parish life */}
-                        <div className="relative rounded-2xl overflow-hidden border-2 border-[#c5a059]/40 shadow-lg bg-slate-900 group">
-                          <img 
-                            src={childrenPhoto} 
-                            alt="Servants d'autel de la Paroisse" 
-                            className="w-full h-64 object-cover object-center transform transition-transform duration-700 hover:scale-105"
-                            referrerPolicy="no-referrer"
-                          />
+                        {/* Elegant Sacred Liturgical Cross Box */}
+                        <div className="relative rounded-2xl h-72 overflow-hidden border-2 border-[#c5a059]/40 shadow-xl bg-slate-950 flex flex-col items-center justify-center p-6 text-center select-none">
+                          {/* Symmetrical ray of light behind the cross */}
+                          <div className="absolute inset-x-0 top-1/2 -translate-y-12 h-1 bg-gradient-to-r from-transparent via-[#c5a059]/20 to-transparent blur-md pointer-events-none" />
+                          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-transparent via-[#c5a059]/20 to-transparent blur-md pointer-events-none" />
+                          
+                          {/* Radial golden halo */}
+                          <div className="absolute w-52 h-52 rounded-full bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.15)_0%,transparent_70%)] pointer-events-none" />
+
+                          {/* Beautiful Golden Liturgical Latin Cross Constructed visually */}
+                          <div className="relative w-40 h-48 flex items-center justify-center pointer-events-none">
+                            {/* Vertical Beam */}
+                            <motion.div 
+                              initial={{ scaleY: 0 }}
+                              animate={{ scaleY: 1 }}
+                              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+                              className="absolute w-2 h-40 bg-gradient-to-b from-[#ebd5a3] via-[#c5a059] to-[#ebd5a3] rounded-full shadow-[0_0_15px_rgba(197,160,89,0.5)] origin-center"
+                            />
+                            {/* Horizontal Beam */}
+                            <motion.div 
+                              initial={{ scaleX: 0 }}
+                              animate={{ scaleX: 1 }}
+                              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+                              className="absolute h-2 w-24 bg-gradient-to-r from-[#ebd5a3] via-[#c5a059] to-[#ebd5a3] rounded-full shadow-[0_0_15px_rgba(197,160,89,0.5)] -translate-y-6 origin-center"
+                            />
+
+                            {/* Center Star Glow */}
+                            <motion.div 
+                              animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
+                              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                              className="absolute w-5 h-5 rounded-full bg-white -translate-y-6 flex items-center justify-center shadow-[0_0_18px_#ebd5a3]"
+                            >
+                              <Sparkles size={10} className="text-[#c5a059]" />
+                            </motion.div>
+                          </div>
+
+                          <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
+                            <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#ebd5a3]/90 block">
+                              Paroisse Sainte Famille de Nazareth • Divo
+                            </span>
+                          </div>
                         </div>
 
                       </div>
