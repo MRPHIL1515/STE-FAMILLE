@@ -50,21 +50,11 @@ const App: React.FC = () => {
     }, 1200);
   };
 
-  // Operational schedule state: 06:00 to 18:00 (hours >= 6 && < 18)
-  const [isOpen, setIsOpen] = useState(() => {
-    const hour = new Date().getHours();
-    return hour >= 6 && hour < 18;
-  });
+  // Operational schedule state: Always open for offline testing
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
-    const checkSchedule = () => {
-      const hour = new Date().getHours();
-      setIsOpen(hour >= 6 && hour < 18);
-    };
-    
-    checkSchedule();
-    const interval = setInterval(checkSchedule, 10000); 
-    return () => clearInterval(interval);
+    setIsOpen(true);
   }, []);
 
   const waveLink = "https://pay.wave.com/m/M_ci_Hv81mxpuJK74/c/ci/";
